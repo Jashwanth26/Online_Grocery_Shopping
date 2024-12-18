@@ -11,7 +11,7 @@ export default function Products() {
     const token = localStorage.getItem('token');
     async function fetchProducts() {
       try {
-        const response = await fetch('http://localhost:8000/',{
+        const response = await fetch('http://localhost:80/',{
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,

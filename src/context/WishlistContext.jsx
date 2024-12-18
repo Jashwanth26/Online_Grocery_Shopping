@@ -16,7 +16,7 @@ export function WishlistProvider({ children }) {
           return;
         }
         // GET request to fetch the user's profile (including wishlist)
-        const response = await axios.get('http://localhost:8000/customer/wishlist', {
+        const response = await axios.get('http://localhost:80/customer/wishlist', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -42,7 +42,7 @@ export function WishlistProvider({ children }) {
       }
       // PUT request to add the product to the wishlist
       const response = await axios.put(
-        'http://localhost:8000/wishlist',
+        'http://localhost:80/wishlist',
         { _id: product._id }, // Use _id as required by the backend
         {
           headers: {
@@ -76,7 +76,7 @@ export function WishlistProvider({ children }) {
         return;
       }
       // DELETE request to remove the product from the wishlist
-      await axios.delete(`http://localhost:8000/wishlist/${productId}`, {
+      await axios.delete(`http://localhost:80/wishlist/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Add Authorization header
         },

@@ -14,7 +14,7 @@ export default function Register() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/customer/signup', data)
+        axios.post('http://localhost:80/customer/signup', data)
             .then(() => {
                 alert("Registered successfully");
                 // Clear the form data after successful registration

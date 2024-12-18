@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:8000/customer/login', {
+      const response = await fetch('http://localhost:80/customer/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

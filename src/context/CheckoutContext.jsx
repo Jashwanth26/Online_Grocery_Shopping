@@ -19,7 +19,7 @@ export function CheckoutProvider({ children }) {
 
       // Post address to the server
       const response = await axios.post(
-        'http://localhost:8000/customer/address',
+        'http://localhost:80/customer/address',
         address,
         {
           headers: {

@@ -17,7 +17,7 @@ export function CartProvider({ children }) {
         console.error('No token found in local Storage');
         return;
       }
-      const response = await axios.get('http://localhost:8000/customer/profile', {
+      const response = await axios.get('http://localhost:80/customer/profile', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ export function CartProvider({ children }) {
       }
 
       await axios.put(
-        'http://localhost:8000/cart',
+        'http://localhost:80/cart',
         { _id: product._id, qty },
         {
           headers: {
@@ -80,7 +80,7 @@ export function CartProvider({ children }) {
         return;
       }
 
-      await axios.delete(`http://localhost:8000/cart/${productId}`, {
+      await axios.delete(`http://localhost:80/cart/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -103,7 +103,7 @@ export function CartProvider({ children }) {
       }
 
       await axios.put(
-        'http://localhost:8000/cart',
+        'http://localhost:80/cart',
         { _id: productId, qty },
         {
           headers: {
